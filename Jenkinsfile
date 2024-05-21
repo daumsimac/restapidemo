@@ -16,9 +16,9 @@ node {
     stage("Deployment") {
       sh "chmod +x ./gradlew"
       sh 'nohup ./gradlew bootRun -Dserver.port=8080 &'
-      sh 'echo #!ASdf2580 | docker login -u daumsimac@gmail.com --password-stdin'
-      sh 'docker build -t daumsimac/restapidemo:1.0 .'
-      sh 'docker push daumsimac/restapidemo:1.0'
+      sh 'echo #!ASdf2580 | sudo docker login -u daumsimac@gmail.com --password-stdin'
+      sh 'sudo docker build -t daumsimac/restapidemo:1.0 .'
+      sh 'sudo docker push daumsimac/restapidemo:1.0'
     }
   }
 }
