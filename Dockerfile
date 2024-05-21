@@ -11,6 +11,6 @@ RUN ./gradlew bootJar
 FROM openjdk:17-alpine
 COPY --from=builder build/libs/*.jar restapidemo.jar
 
-EXPOSE 8081
+EXPOSE 8080
 
 ENTRYPOINT [ "java" , "-jar" , "restapidemo.jar" ]
