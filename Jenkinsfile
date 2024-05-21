@@ -25,7 +25,9 @@ node {
     stage('Push Docker Image') {
         script {
             docker.withRegistry('https://index.docker.io/v1/', dockerHubCredentialsId) {
-                sh 'sudo docker push daumsimac/restapidemo:1.0'
+                def image = docker.image("daumsimac/restapidemo:1.0")
+                image.push()
+                image.push('1.0')
             }
         }
     }
