@@ -29,5 +29,6 @@ node {
                 image.push()
             }
         }
+    }
   }
 }
